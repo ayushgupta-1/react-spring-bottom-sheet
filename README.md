@@ -1,30 +1,39 @@
-[![npm stat](https://img.shields.io/npm/dm/react-spring-bottom-sheet.svg?style=flat-square)](https://npm-stat.com/charts.html?package=react-spring-bottom-sheet)
-[![npm version](https://img.shields.io/npm/v/react-spring-bottom-sheet.svg?style=flat-square)](https://www.npmjs.com/package/react-spring-bottom-sheet)
+[![npm stat](https://img.shields.io/npm/dm/@percivel/react-spring-bottom-sheet.svg?style=flat-square)](https://npm-stat.com/charts.html?package=@percivel/react-spring-bottom-sheet)
+[![npm version](https://img.shields.io/npm/v/@percivel/react-spring-bottom-sheet.svg?style=flat-square)](https://www.npmjs.com/package/@percivel/react-spring-bottom-sheet)
 [![gzip size][gzip-badge]][unpkg-dist]
 [![size][size-badge]][unpkg-dist]
 [![module formats: cjs, es, and modern][module-formats-badge]][unpkg-dist]
 
 ![Logo with the text Accessible, Delightful and Performant](https://react-spring-bottom-sheet.cocody.dev/readme.svg)
 
-**react-spring-bottom-sheet** is built on top of **[react-spring]** and **[react-use-gesture]**. It busts the myth that accessibility and supporting keyboard navigation and screen readers are allegedly at odds with delightful, beautiful, and highly animated UIs. Every animation and transition use CSS custom properties instead of manipulating them directly, allowing complete control over the experience from CSS alone.
+# @percivel/react-spring-bottom-sheet (Fork)
+
+> Fork of [react-spring-bottom-sheet](https://github.com/stipsan/react-spring-bottom-sheet) updated to support **React 19**.
+
+## What's changed
+
+- Updated peer dependencies to include React 19
+- Fully tested with latest dependencies
+- CI/CD set up for automated publishing
+
+**@percivel/react-spring-bottom-sheet** is built on top of **[react-spring]** and **[react-use-gesture]**. It combines accessibility with delightful animations and full keyboard/screen reader support. All animations use CSS custom properties to allow complete styling control from CSS alone.
+
+---
 
 # Installation
 
 ```bash
-npm i react-spring-bottom-sheet
+npm i @percivel/react-spring-bottom-sheet
 ```
 
-# Getting started
+# Getting Started
 
 ## Basic usage
 
 ```jsx
 import { useState } from 'react'
-import { BottomSheet } from 'react-spring-bottom-sheet'
-
-// if setting up the CSS is tricky, you can add this to your page somewhere:
-// <link rel="stylesheet" href="https://unpkg.com/react-spring-bottom-sheet/dist/style.css" crossorigin="anonymous">
-import 'react-spring-bottom-sheet/dist/style.css'
+import { BottomSheet } from '@percivel/react-spring-bottom-sheet'
+import '@percivel/react-spring-bottom-sheet/dist/style.css'
 
 export default function Example() {
   const [open, setOpen] = useState(false)
@@ -43,7 +52,10 @@ TS support is baked in, and if you're using the `snapTo` API use `BottomSheetRef
 
 ```tsx
 import { useRef } from 'react'
-import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
+import {
+  BottomSheet,
+  BottomSheetRef,
+} from '@percivel/react-spring-bottom-sheet'
 
 export default function Example() {
   const sheetRef = useRef<BottomSheetRef>()
@@ -89,12 +101,13 @@ module.exports = {
   plugins: {
     // Ensures the default variables are available
     'postcss-custom-properties-fallback': {
-      importFrom: require.resolve('react-spring-bottom-sheet/defaults.json'),
+      importFrom: require.resolve(
+        '@percivel/react-spring-bottom-sheet/defaults.json'
+      ),
     },
   },
 }
 ```
-
 
 # [Demos](https://react-spring-bottom-sheet.cocody.dev/)
 
@@ -121,7 +134,6 @@ If you provide either a `header` or `footer` prop you'll enable the special beha
 > [View demo code](/pages/fixtures/aside.tsx#L41-L53)
 
 In most cases you use a bottom sheet the same way you do with a dialog: you want it to overlay the page and block out distractions. But there are times when you want a bottom sheet but without it taking all the attention and overlaying the entire page. Providing `blocking={false}` helps this use case. By doing so you disable a couple of behaviors that are there for accessibility (focus-locking and more) that prevents a screen reader or a keyboard user from accidentally leaving the bottom sheet.
-
 
 # API
 
@@ -366,11 +378,20 @@ Type: `(numberOrCallback: number | (state => number)) => void, options?: {source
 Same signature as the `defaultSnap` prop, calling it will animate the sheet to the new snap point you return. You can either call it with a number, which is the height in px (it'll select the closest snap point that matches your value): `ref.current.snapTo(200)`. Or:
 
 ```js
-ref.current.snapTo(({ // Showing all the available props
-  headerHeight, footerHeight, height, minHeight, maxHeight, snapPoints, lastSnap }) =>
-  // Selecting the largest snap point, if you give it a number that doesn't match a snap point then it'll
-  // select whichever snap point is nearest the value you gave
-  Math.max(...snapPoints)
+ref.current.snapTo(
+  ({
+    // Showing all the available props
+    headerHeight,
+    footerHeight,
+    height,
+    minHeight,
+    maxHeight,
+    snapPoints,
+    lastSnap,
+  }) =>
+    // Selecting the largest snap point, if you give it a number that doesn't match a snap point then it'll
+    // select whichever snap point is nearest the value you gave
+    Math.max(...snapPoints)
 )
 ```
 

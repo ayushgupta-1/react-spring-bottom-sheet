@@ -1,12 +1,17 @@
 {
   "name": "@percivel/react-spring-bottom-sheet",
-  "description": "✨ Accessible, 🪄 Delightful, and 🤯 Performant. Built on react-spring for the web, and react-use-gesture.",
+  "description": "Fork of react-spring-bottom-sheet updated to support React 19. ✨ Accessible, 🪄 Delightful, and 🤯 Performant.",
   "license": "MIT",
-  "author": "Cody Olsen",
-  "homepage": "https://react-spring-bottom-sheet.cocody.dev",
-  "repository": "stipsan/react-spring-bottom-sheet",
+  "homepage": "https://github.com/ayushgupta-1/react-spring-bottom-sheet#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayushgupta-1/react-spring-bottom-sheet.git"
+  },
+  "contributors": [
+    "Ayush Gupta"
+  ],
   "bugs": {
-    "url": "https://github.com/stipsan/react-spring-bottom-sheet/issues"
+    "url": "https://github.com/ayushgupta-1/react-spring-bottom-sheet/issues"
   },
   "version": "3.4.1-react19.0",
   "main": "dist/index.js",
