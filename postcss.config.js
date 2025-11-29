@@ -3,7 +3,8 @@ const importFrom = path.resolve(__dirname, './defaults.json')
 
 module.exports = {
   plugins: {
-    tailwindcss: {},
+    // Use the new Tailwind PostCSS wrapper
+    '@tailwindcss/postcss': {},
     'postcss-custom-properties-fallback': { importFrom },
     // @TODO add importFrom to preset-env when CSS snapshot testing is in place
     'postcss-preset-env': { importFrom, stage: 0 },
@@ -20,6 +21,7 @@ module.exports = {
         ],
       },
     },
+
     autoprefixer: {},
   },
 }
