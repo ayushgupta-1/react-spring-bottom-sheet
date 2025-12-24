@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/ayushgupta-1/react-spring-bottom-sheet/issues"
   },
-  "version": "3.4.4",
+  "version": "3.4.5",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
