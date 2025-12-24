@@ -6,7 +6,7 @@
 
 ![Logo with the text Accessible, Delightful and Performant](https://react-spring-bottom-sheet.cocody.dev/readme.svg)
 
-# @percivel/react-spring-bottom-sheet (Fork)
+# @percivel/react-spring-bottom-sheet
 
 > Fork of [react-spring-bottom-sheet](https://github.com/stipsan/react-spring-bottom-sheet) updated to support **React 19**.
 
