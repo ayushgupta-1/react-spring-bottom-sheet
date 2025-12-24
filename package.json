@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/ayushgupta-1/react-spring-bottom-sheet/issues"
   },
-  "version": "3.4.3",
+  "version": "3.4.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -39,7 +39,6 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
-    "@reach/portal": "^0.18.0",
     "@xstate/react": "^1.6.3",
     "body-scroll-lock": "^3.1.5",
     "focus-trap": "^6.2.2",
@@ -52,6 +51,7 @@
     "react-dom": ">=16.14.0 || 17 || 18 || 19"
   },
   "devDependencies": {
+    "@reach/portal": "^0.18.0",
     "@rooks/use-raf": "^4.5.0",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.1.17",
@@ -66,7 +66,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "classnames": "^2.5.1",
-    "eslint": "^9.39.1",
+    "eslint": "^7.32.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
